@@ -2,8 +2,6 @@
 
 **KeKasir** adalah program manajemen inventaris dan kasir yang dirancang untuk memudahkan operasional toko, khususnya dalam penjualan barang-barang sekolah dasar seperti pulpen, pensil, penggaris, dan penghapus. Fitur autentikasi yang terintegrasi memastikan akses yang aman dan terbatas hanya bagi pengguna yang berwenang.
 
-Dalam kasus
-
 ## Fitur Utama
 
 - **Manajemen Inventaris**: Pantau level stok, kategori barang, dan detail produk dengan mudah.
