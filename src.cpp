@@ -31,7 +31,7 @@ void registerAccount(string username, string password, vector<Account>& verif) {
 		}
 	}
 	verif.push_back({username, password});
-	cout << "Registration successful!" << endl;
+	cout << "Registrasi Sukses!, Mohon tunggu sampai akun di verifikasi oleh Admin! " << endl;
 }
 
 int main() {
@@ -63,10 +63,10 @@ int main() {
 				isLogged = login(username, password, accounts);
 			}
 		} else if (n == 3) {
-			cout << "Exiting the program. Goodbye!" << endl;
+			cout << "Menutup Program.. Mohon Tunggu" << endl;
 			break;
 		} else {
-			cout << "Invalid option. Please try again." << endl;
+			cout << "Pilihan tidak valid." << endl;
 		}
 
 		while (isLogged) {
@@ -75,7 +75,7 @@ int main() {
 				cout << "========================================" << endl;
 				cout << "User: " << username << endl;
 				cout << "9: Log Out" << endl;
-				cout << "8. Account Approval";
+				cout << "8. Verifikasi Akun";
 				if(verif.size()  > 0) {
 					cout << endl;
 					cout << "(Terdapat "<< verif.size() << " " << "akun menunggu Verifikasi)" << endl;
@@ -138,9 +138,21 @@ int main() {
 
 						if(Jumlah_uang >= Total_harga) {
 							Kembalian = Jumlah_uang - Total_harga;
+							cout << "========== STRUK ==========" << endl;
+							if(pulpenK > 0) cout << "Pulpen : " << pulpenK << endl;
+							if(pensilK > 0) cout << "Pensil : " << pensilK << endl;
+							if(penggarisK > 0) cout << "Penggaris : " << penggarisK << endl;
+							if(penghapusK > 0) cout << "Penghapus : " << penghapusK << endl;
+							cout << "============================" << endl;
+							cout << "Pembayaran: " << Jumlah_uang << endl;
+							cout << "Total Harga: " << Total_harga << endl;
 							cout << "Kembalian: " << Kembalian << endl;
 						} else {
 							cout << "Uang tidak cukup!" << endl;
+							pulpen += pulpenK;
+							pensil += pensilK;
+							penggaris += penggarisK;
+							penghapus += penghapusK;
 						}
 						cout << "Lanjut atau kembali? [y/n]" << endl;
 						char choice;
@@ -151,7 +163,6 @@ int main() {
 					}
 				}
 				if(input == 2) {
-					int pulpen = 0, pensil = 0, penggaris = 0;
 					while (true) {
 
 						int input1, input2;
@@ -182,6 +193,8 @@ int main() {
 
 						} else if(input1 == 9) {
 							break;
+						} else{
+						    cout << "Option Tidak Valid!" << endl;
 						}
 					}
 				}
@@ -192,6 +205,9 @@ int main() {
 					if (confirm == 'y') {
 						isLogged = logout();
 					}
+				}
+				else{
+				    cout << "Pilihan tidak valid." << endl;
 				}
 			}
 		}
