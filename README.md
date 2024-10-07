@@ -7,7 +7,6 @@
 - **Manajemen Inventaris**: Pantau level stok, kategori barang, dan detail produk dengan mudah.
 - **Sistem Kasir**: Pemrosesan penjualan yang cepat dan otomatisasi pembuatan struk.
 - **Autentikasi Pengguna**: Login yang aman untuk memastikan hanya pengguna yang berwenang yang dapat mengakses sistem.
-- **Pelaporan Penjualan**: Buat laporan penjualan.
 
 ## Teknologi yang Digunakan
 
