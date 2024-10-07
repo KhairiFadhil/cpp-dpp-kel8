@@ -90,7 +90,66 @@ int main() {
 			cout << "2.Inventaris" << endl;
 				cin >> input;
 			if(input == 1) {
-				//Kode Kasir
+				
+   int Jumlah_uang=0, Total_harga=0, Kembalian=0;
+   int pulpen=0, pensil=0, penggaris=0, penghapus=0, input1,input2;
+   while(true){
+    if(pulpen > 0){
+        cout << "Pulpen : " << pulpen << endl;
+    }
+    if(pensil > 0){
+        cout << "Pensil : " << pensil << endl;
+    }if(penggaris > 0){
+        cout << "Penggaris: " << penggaris << endl;
+    }if(penghapus > 0){
+        cout << "Penghapus : " << penghapus << endl;
+    }
+    
+    cout << "Masukkan barang yang dibeli " << endl;
+    cout << "1 . Pulpen" << endl << "2 . Pensil" << endl << "3 . Penggaris" << endl << "4 . Penghapus" << endl << "9   .   Close" << endl;
+    cin >> input1;
+    cout << "Masukkan jumlah barang yang dibeli ";
+        if(input1 == 1){
+            cin >> input2;
+            pulpen  += input2;
+            cout << "Pulpen : " << pulpen <<endl;
+        }else if(input1 == 2){
+            cin >> input2;
+            pensil += input2;
+            cout << "Pensil : " << pensil <<endl;
+        }else if(input1 == 3){
+            cin >> input2;
+            penggaris += input2;
+            cout << "Penggaris :  " << penggaris <<endl;
+        }else if(input1 == 4){
+            cin >> input2;
+            penghapus += input2;
+            cout << "Penghapus : " << penghapus << endl;
+        }
+        else if(input1 == 9){
+            break;
+        }
+   }
+    int harga_pulpen = 3000 * pulpen;
+    int harga_pensil = 1000 * pensil;
+    int harga_penggaris = 3000 * penggaris;
+    int harga_penghapus = 1500 * penghapus;
+    
+   Total_harga = harga_pulpen + harga_pensil + harga_penggaris + harga_penghapus;
+   int lanjut;
+   cout << "Total harga : ";
+   cout << Total_harga <<endl;
+    cout << "Masukkan nominal uang yang diberikan : ";
+    cin >> Jumlah_uang;
+    cout << endl;
+    if(Jumlah_uang > Total_harga){
+         Kembalian = Jumlah_uang - Total_harga;
+         cout << "Kembalian : " << Kembalian << endl;
+    }else{
+        cout << "Duid kurang euy..";
+    }
+    cout << "Ketik apapun untuk lanjut";
+    cin >> lanjut;
 			}
 			if(input == 2) {
 			    int pulpen = 0, pensil = 0, penggaris = 0;
