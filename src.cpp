@@ -12,8 +12,8 @@ bool logout() {
 	return false;
 }
 
-bool login(string username, string password, const vector<Account> accounts) {
-	for (const Account account : accounts) {
+bool login(string username, string password, const vector<Account>& accounts) {
+	for (const Account& account : accounts) {
 		if (username == account.username && password == account.password) {
 			cout << "Login Berhasil!, Selamat datang " << username << endl;
 			return true;
@@ -23,8 +23,8 @@ bool login(string username, string password, const vector<Account> accounts) {
 	return false;
 }
 
-void registerAccount(string username, string password, vector<Account> verif) {
-	for (const Account account : verif) {
+void registerAccount(string username, string password, vector<Account>& verif) {
+	for (const Account& account : verif) {
 		if (username == account.username) {
 			cout << "Registrasi Gagal, Akun sudah terdaftar." << endl;
 			return;
@@ -86,6 +86,30 @@ int main() {
 				cout << "1.Kasir" << endl;
 				cout << "2.Inventaris" << endl;
 				cin >> input;
+				if(input == 8){
+                    int acc;
+                    char yesno;
+                    cout << "=========" << "Account Approval" << " =========" << endl << endl;
+                    for (int i = 0; i < verif.size(); i++) {
+                        cout << i + 1 << ". " << "Username: " << verif[i].username <<  ", Password: " << verif[i].password << endl;
+                    }
+                    cin >> acc;
+                    char con;
+                    for (int i = 0; i < verif.size(); i++) {
+                        if(i + 1 == acc){
+                        cout << "Apakah kau yakin ingin menambahkan user:" << verif[i].username << "? [y/n]" << endl;
+                        cin >> con;
+                        if(con == 'y'){
+                            accounts.push_back({verif[i].username, verif[i].password});
+                            verif.erase(verif.begin() + i);
+                            break;
+                        }else{
+                            break;
+                        }
+                    }
+                 }
+            }
+				
 				if(input == 1) {
 					while(true) {
 					    	int pulpenK=0, pensilK=0, penggarisK=0, penghapusK=0;
