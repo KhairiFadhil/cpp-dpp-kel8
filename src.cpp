@@ -12,8 +12,8 @@ bool logout() {
 	return false;
 }
 
-bool login(string username, string password, const vector<Account>& accounts) {
-	for (const Account& account : accounts) {
+bool login(string username, string password, const vector<Account> accounts) {
+	for (const Account account : accounts) {
 		if (username == account.username && password == account.password) {
 			cout << "Login Berhasil!, Selamat datang " << username << endl;
 			return true;
@@ -23,8 +23,8 @@ bool login(string username, string password, const vector<Account>& accounts) {
 	return false;
 }
 
-void registerAccount(string username, string password, vector<Account>& verif) {
-	for (const Account& account : verif) {
+void registerAccount(string username, string password, vector<Account> verif) {
+	for (const Account account : verif) {
 		if (username == account.username) {
 			cout << "Registrasi Gagal, Akun sudah terdaftar." << endl;
 			return;
